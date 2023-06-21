@@ -5,6 +5,7 @@
     <title>My first Spring Boot App</title>
 </head>
 <body>
+<nav th:replace="fragments :: navbar"></nav>
 <div class="container">
     <h1>"Best of the year by <span th:text="${myName}"></span>"</h1>
 </div>
