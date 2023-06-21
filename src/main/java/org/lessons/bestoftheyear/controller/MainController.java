@@ -44,10 +44,10 @@ public class MainController {
         // Istanzio ogni song con titolo e id
         List<Song> songs = new ArrayList<>();
         Song song1 = new Song(1, "Bohemian Rhapsody");
-        Song song2 = new Song(2, "Smells Like Teen Spirit");
+        Song song2 = new Song(2, "Another Brick in The Wall");
         Song song3 = new Song(3, "Still D.R.E.");
         Song song4 = new Song(4, "House of The Rising Sun");
-        Song song5 = new Song(5, "White Rabbit");
+        Song song5 = new Song(5, "Anthem Part Two");
         // aggiungo i titoli e l'id delle singole song all' arraylist songs
         songs.add(song1);
         songs.add(song2);
@@ -61,7 +61,7 @@ public class MainController {
     public List<Movie> movies(Model model) {
         // Richiamo tutti i movies
         List<Movie> movies = getBestMovies();
-        // Istanzio array che contiene solo i titoli
+        // Istanzio la lista che contiene solo i titoli
         List<String> movieTitles = new ArrayList<>();
         // Ciclo per stampare i titoli dei movies con il metodo gettitle di Movie
         for(Movie movie : movies) {
