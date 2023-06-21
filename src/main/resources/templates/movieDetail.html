@@ -5,11 +5,31 @@
     <title>Movie detail</title>
 </head>
 <body>
-<h1 th:text="${movie.title}"></h1>
-<!-- div mappato sull'oggetto student-->
-<div th:object="${movie}">
-    <p th:text="|Title: *{title}|"></p>
-    <p th:text="|ID: *{id}|"></p>
+<nav th:replace="fragments :: navbar"></nav>
+<div class="container">
+    <div th:if="${id == 1}">
+        <img alt="poster" th:src="@{/movies_img/fear.jpg}" class="imgDetail"/>
+    </div>
+    <div th:if="${id == 2}">
+        <img alt="poster" th:src="@{/movies_img/goodfellas.jpg}" class="imgDetail"/>
+    </div>
+    <div th:if="${id == 3}">
+        <img alt="poster" th:src="@{/movies_img/wild.jpg}" class="imgDetail"/>
+    </div>
+    <div th:if="${id == 4}">
+        <img alt="poster" th:src="@{/movies_img/pulp.jpg}" class="imgDetail"/>
+    </div>
+    <div th:if="${id == 5}">
+        <img alt="poster" th:src="@{/movies_img/iene.jpg}" class="imgDetail"/>
+    </div>
+
+    <div th:object="${movie}">
+        <h2 th:text="*{title}"></h2>
+        <h5 th:text="|ID: *{id}|" class="mb-5"></h5>
+    </div>
+    <button class="btn btn-warning">
+        <a th:href="@{/movies}">Back to List</a>
+    </button>
 </div>
 </body>
 </html>

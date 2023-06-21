@@ -15,7 +15,7 @@ import java.util.List;
 @RequestMapping("/")
 public class MainController {
     @GetMapping
-    public String template(Model model) {
+    public String index(Model model) {
         String myName = "Simone";
         model.addAttribute("myName", myName); // Aggiungo alla mappa del model un attributo
         return "index";

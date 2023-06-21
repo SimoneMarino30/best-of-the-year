@@ -18,6 +18,7 @@ public class MovieController {
     public List<Movie> movies(Model model) {
         // Richiamo tutti i movies
         List<Movie> movies = getBestMovies();
+
         // Istanzio la lista che contiene solo i titoli
         //List<String> movieTitles = new ArrayList<>();
         // Ciclo per stampare i titoli dei movies con il metodo gettitle di Movie
@@ -40,13 +41,13 @@ public class MovieController {
         // Recupero l' ID
         Movie movie = null;
         for(Movie m : getBestMovies()) {
-            if(m.getId() == id) {
-                movie = m;
+            if(m.getId() == id) { // Controllo se l'ID del movie corrente coincide con l'ID fornito come parametro
+                movie = m; // Assegno l'oggetto "m" a "movie" se l'ID coincide
             }
         }
-        // Aggiungo
+        // Aggiungo l'oggetto "movie" all'oggetto "model" per renderlo disponibile nella vista
         model.addAttribute("movie", movie);
-        return "movieDetail";
+        return "movieDetail"; // ritorno la vista detail
 
     }
 

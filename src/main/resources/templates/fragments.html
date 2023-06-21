@@ -3,10 +3,11 @@
 <head>
     <th:block th:fragment="head">
         <meta charset="UTF-8">
-        <!-- CSS -->
-        <link rel="stylesheet" th:href="@{/css/style.css}">
+
         <!-- Bootstrap CSS -->
         <link  th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}"/>
+        <!-- CSS -->
+        <link rel="stylesheet" th:href="@{/css/style.css}">
         <!-- Bootstrap Bundle with Popper -->
         <script th:src="@{/webjars/bootstrap/5.2.3/js/bootstrap.bundle.min.js}" defer></script>
     </th:block>
@@ -15,20 +16,26 @@
 <!-- navbar fragment -->
 <nav class="navbar navbar-expand-lg mb-5" th:fragment="navbar" style="background-color: gray">
     <div class="container">
-        <a class="navbar-brand" th:href="@{/}">Best Of The Year</a>
+        <a class="navbar-brand" th:href="@{/}">
+            <img alt="logo" th:src="@{/logo.png}" class="logo"/>
+        </a>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/}">Home</a>
+                    <!-- Se l'attributo "myName" nel modello non è null, il link si attiva -->
+                    <a class="nav-link" th:href="@{/}" th:classappend="${myName != null ? 'active' : ''}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/movies}">Movies</a>
+                    <!-- Se l'attributo "movies" nel modello non è null, il link si attiva -->
+                    <a class="nav-link" th:href="@{/movies}" th:classappend="${movies != null ? 'active' : ''}">Movies</a>  <!-- th:classappend="${condition ? 'active' : ''}" -->
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/songs}">Songs</a>
+                    <!-- Se l'attributo "songs" nel modello non è null, il link si attiva -->
+                    <a class="nav-link" th:href="@{/songs}" th:classappend="${songs != null ? 'active' : ''}">Songs</a>
                 </li>
             </ul>
         </div>

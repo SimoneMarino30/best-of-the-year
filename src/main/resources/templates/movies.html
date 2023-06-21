@@ -7,13 +7,15 @@
 <body>
 <nav th:replace="fragments :: navbar"></nav>
 <div class="container">
-    <h1>Best movies:</h1>
-    <ul>
-        <li th:each="movie : ${movies}">
+    <h1 class="text-center">Best movies:</h1>
+    <ul class="list-group mb-5">
+        <li th:each="movie : ${movies}" class="list-group-item">
             <a th:href="@{|/movies/${movie.id}|}" th:text="${movie.title}"></a>
         </li>
     </ul>
-    <a th:href="@{/}">Back</a>
+    <button class="btn btn-info">
+        <a th:href="@{/}">Home</a>
+    </button>
 </div>
 </body>
 </html>
