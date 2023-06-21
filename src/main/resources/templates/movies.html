@@ -5,7 +5,14 @@
     <title>Movies</title>
 </head>
 <body>
-<h1>Best movies:</h1>
-<h2 th:text="${movies}"></h2>
+<div class="container">
+    <h1>Best movies:</h1>
+    <ul>
+        <li th:each="movie : ${movies}">
+            <a th:href="@{|/movies/${movie.id}|}" th:text="${movie.title}"></a>
+        </li>
+    </ul>
+    <a th:href="@{/}">Back</a>
+</div>
 </body>
 </html>

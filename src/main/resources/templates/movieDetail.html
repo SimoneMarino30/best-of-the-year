@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:replace="fragments :: head"></th:block>
+    <title>Movie detail</title>
+</head>
+<body>
+<h1 th:text="${movie.title}"></h1>
+<!-- div mappato sull'oggetto student-->
+<div th:object="${movie}">
+    <p th:text="|Title: *{title}|"></p>
+    <p th:text="|ID: *{id}|"></p>
+</div>
+</body>
+</html>
